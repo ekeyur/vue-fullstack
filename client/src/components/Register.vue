@@ -11,6 +11,7 @@
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+
 export default {
   data () {
     return {
@@ -18,6 +19,7 @@ export default {
       password: ''
     }
   },
+
   methods: {
     async register () {
       const response = await AuthenticationService.register({

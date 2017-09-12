@@ -32,7 +32,6 @@
               <img class="album-image" :src="song.albumImage"  />
             </v-flex>
           </v-layout>
-          {{song.album}}
         </div>
       </panel>
     </v-flex>

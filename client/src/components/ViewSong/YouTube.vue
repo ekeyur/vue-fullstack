@@ -9,10 +9,7 @@
 export default {
   props: [
     'youtubeId'
-  ],
-  components: {
-
-  }
+  ]
 }
 </script>
 

@@ -1,6 +1,4 @@
 <template>
-  <v-layout column>
-    <v-flex xs6 offset-xs3>
       <panel title="Songs">
         <router-link slot="action" :to="{ name: 'songs-create'}">
           <v-btn  class="cyan accent-2" light small absolute right middle fab>
@@ -34,17 +32,14 @@
           </v-layout>
         </div>
       </panel>
-    </v-flex>
-  </v-layout>
 </template>
 <script>
 
 import SongService from '@/services/SongsService'
-import Panel from '@/components/Panel'
 
 export default {
   components: {
-    Panel
+
   },
 
   data () {

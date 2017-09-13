@@ -1,9 +1,6 @@
 <template>
   <panel title = "Lyrics">
-    <textarea
-      readonly
-      v-model="lyrics"
-      ></textarea>
+    {{lyrics}}
   </panel>
 </template>
 

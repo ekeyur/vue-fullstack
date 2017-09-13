@@ -21,7 +21,7 @@
         </v-btn>
       </v-flex>
       <v-flex xs6>
-        <img class="album-image" :src="song.albumImage"  />
+        <img class="album-image" :src="song.albumImageURL"  />
         <br />{{song.album}}
       </v-flex>
     </v-layout>

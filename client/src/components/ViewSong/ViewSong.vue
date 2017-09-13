@@ -1,20 +1,19 @@
 <template>
   <div class="">
     <v-layout>
-      <v-flex xs6 class="mb-3">
-        <song-metadata :song="song"></song-metadata>
-      </v-flex>
-      <v-flex xs6 class="ml-3">
-        <you-tube :youtubeId="song.youtubeId"></you-tube>
-      </v-flex>
-
-    </v-layout>
-    <v-layout>
       <v-flex xs6>
-        <lyrics :lyrics="song.lyrics"></lyrics>
+        <song-metadata :song="song" />
       </v-flex>
-      <v-flex xs6 class="ml-3">
-        <tab :tab="song.tab"></tab>
+      <v-flex xs6 class="ml-2">
+        <you-tube :youtubeId="song.youtubeId" />
+      </v-flex>
+    </v-layout>
+    <v-layout class="mt-2">
+      <v-flex xs6>
+        <lyrics :lyrics="song.lyrics" />
+      </v-flex>
+      <v-flex xs6 class="ml-2">
+        <tab :tab="song.tab" />
       </v-flex>
     </v-layout>
   </div>

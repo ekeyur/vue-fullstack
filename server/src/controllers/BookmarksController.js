@@ -18,9 +18,10 @@ module.exports = {
     }
   },
   async post (req, res) {
-    console.log('body', req.body)
     try {
-      const {songId, userId} = req.body.params
+      const songId = req.body.songId
+      const userId = req.user
+
       const bookmark = await Bookmark.findOne({
         where: {
           SongId: songId,

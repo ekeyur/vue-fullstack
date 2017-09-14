@@ -19,12 +19,13 @@
           }">
           Edit
         </v-btn>
-        <v-btn dark class="cyan" v-if="isUserLoggedIn && bookmark" @click="unsetAsBookmark">
-          UnBookmark
-        </v-btn>
         <v-btn dark class="cyan" v-if="isUserLoggedIn && !bookmark" @click="setAsBookmark">
           Bookmark
         </v-btn>
+        <v-btn dark class="cyan" v-if="isUserLoggedIn && bookmark" @click="unsetAsBookmark">
+          UnBookmark
+        </v-btn>
+
       </v-flex>
       <v-flex xs6>
         <img class="album-image" :src="song.albumImageURL"  />
@@ -63,7 +64,7 @@ export default {
           userId: this.$store.state.user.id
         })).data
       } catch (err) {
-        console.log(err)
+        console.log('error: in : Bookmakr', err)
       }
     }
   },
@@ -73,10 +74,9 @@ export default {
   methods: {
     async setAsBookmark () {
       try {
-        await BookmarksService.post({
-          songId: this.song.id,
-          userId: this.$store.state.user.id
-        })
+        this.bookmark = (await BookmarksService.post({
+          songId: this.song.id
+        })).data
       } catch (err) {
         console.log(err)
       }
